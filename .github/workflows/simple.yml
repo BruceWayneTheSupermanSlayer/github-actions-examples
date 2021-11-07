@@ -1,0 +1,13 @@
+name: Simple Github Action
+on: [ push ]
+jobs:
+  simple-github-actions:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Simple JS Greet Action
+        uses: actions/hello-world-javascript-action
+        id: greet
+        with:
+          who-to-greet: 'Rohit'
+      - name: Refrencing above used action refrencing using id
+        run: echo "${{steps.greet.outputs.time}}"
