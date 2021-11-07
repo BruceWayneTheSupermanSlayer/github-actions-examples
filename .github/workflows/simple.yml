@@ -11,3 +11,9 @@ jobs:
           who-to-greet: 'Rohit'
       - name: Refrencing above used action refrencing using id
         run: echo "${{steps.greet.outputs.time}}"
+      - name: Clone Repository on Github Actions
+        uses: actions/checkout@v2
+      - name: List out the file contents
+        run: |
+          pwd
+          ls -a
