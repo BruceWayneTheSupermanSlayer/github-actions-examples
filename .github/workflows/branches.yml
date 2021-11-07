@@ -1,0 +1,14 @@
+name: Github Branches Actions
+on:
+  push:
+    branches:
+      - 'feature/*'
+      - stage
+      - main
+jobs:
+  push-swagger-docs-to-s3:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone the repository
+        uses: actions/checkout@v2
+
